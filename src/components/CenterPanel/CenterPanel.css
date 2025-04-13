@@ -1,0 +1,19 @@
+/* src/components/CenterPanel/CenterPanel.css */
+/* Remove .center-panel {} styles if they only set background/padding */
+
+.query-area-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.no-cells-placeholder {
+    color: #757575;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+    border: 1px dashed #CE93D8;
+    border-radius: 4px;
+    margin-top: 15px;
+}

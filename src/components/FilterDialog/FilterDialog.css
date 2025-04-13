@@ -1,0 +1,209 @@
+/* src/components/FilterDialog/FilterDialog.css */
+
+.filter-dialog-overlay {
+    position: fixed;
+    inset: 0;
+    /* top, right, bottom, left = 0 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    /* Ensure it's above other content */
+    padding: 20px;
+}
+
+.filter-dialog-content {
+    background-color: #F5F5F5;
+    /* color_dialog_bg */
+    color: #212121;
+    /* color_primary_text */
+    border: 1px solid #CE93D8;
+    /* color_border */
+    border-radius: 6px;
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+    /* Limit dialog width */
+    max-height: 80vh;
+    /* Limit dialog height */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.filter-dialog-content h2 {
+    margin: 0 0 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #CE93D8;
+    color: #6A1B9A;
+    /* color_panel_header */
+    font-size: 14pt;
+    text-align: center;
+}
+
+.filter-rows-container {
+    overflow-y: auto;
+    /* Scroll if many rows */
+    max-height: 40vh;
+    /* Limit height of rows area */
+    padding: 5px;
+    border: 1px solid #E0E0E0;
+    background-color: #FFFFFF;
+    /* Slightly different background for rows */
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 0;
+}
+
+.filter-select,
+.filter-input {
+    padding: 5px 8px;
+    border: 1px solid #CE93D8;
+    /* color_border */
+    border-radius: 3px;
+    font-size: 10pt;
+    background-color: #FFFFFF;
+    /* color_dialog_item_bg */
+    color: #212121;
+}
+
+.filter-select {
+    min-width: 100px;
+    cursor: pointer;
+}
+
+.filter-column {
+    flex: 3;
+}
+
+.filter-operator {
+    flex: 2;
+}
+
+.filter-value {
+    flex: 3;
+}
+
+.filter-input:disabled {
+    background-color: #EEEEEE;
+    color: #AAAAAA;
+    cursor: not-allowed;
+}
+
+.filter-input::placeholder {
+    color: #AAAAAA;
+    font-style: italic;
+    font-size: 9pt;
+}
+
+.filter-remove-button {
+    background-color: #F5F5F5;
+    color: #D32F2F;
+    /* Red color for remove */
+    border: 1px solid #BDBDBD;
+    font-weight: bold;
+    padding: 4px;
+    min-width: 28px;
+    max-width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    /* Make it round */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-size: 12pt;
+    transition: background-color 0.2s ease;
+}
+
+.filter-remove-button:hover {
+    background-color: #EEEEEE;
+}
+
+.filter-remove-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    color: #BDBDBD;
+}
+
+.filter-add-row {
+    display: flex;
+}
+
+.filter-add-button {
+    /* Use app-button styles but maybe less prominent */
+    background-color: #F3E5F5;
+    color: #4A148C;
+    border: 1px solid #CE93D8;
+    font-weight: normal;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 9pt;
+    transition: background-color 0.2s ease;
+}
+
+.filter-add-button:hover {
+    background-color: #E1BEE7;
+}
+
+
+.filter-dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    /* Space out clear and apply/cancel */
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #CE93D8;
+    margin-top: 10px;
+}
+
+.filter-dialog-actions-right {
+    display: flex;
+    gap: 10px;
+}
+
+/* Reuse .app-button styles from global CSS */
+.filter-dialog-actions .app-button {
+    min-width: 90px;
+    /* Ensure decent button size */
+}
+
+.clear-button {
+    background-color: #E0E0E0;
+    color: #616161;
+    border-color: #AAAAAA;
+    font-weight: normal;
+}
+
+.clear-button:hover {
+    background-color: #CACACA;
+    border-color: #999999;
+}
+
+.cancel-button {
+    /* Default app-button style might be okay, or make it less prominent */
+    background-color: #FFFFFF;
+    color: #4A148C;
+    border-color: #CE93D8;
+}
+
+.cancel-button:hover {
+    background-color: #F3E5F5;
+}
+
+.apply-button {
+    /* Default app-button style is likely fine */
+}

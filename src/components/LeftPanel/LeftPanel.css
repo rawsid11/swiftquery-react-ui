@@ -1,0 +1,26 @@
+/* src/components/LeftPanel/LeftPanel.css */
+/* Remove .left-panel {} styles if they only set background/padding */
+
+.left-panel-top-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+.panel-header-label {
+    font-weight: bold;
+    color: #6A1B9A;
+    font-size: 11pt;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #CE93D8;
+    padding-bottom: 3px;
+    flex-shrink: 0;
+}
+
+.schema-tree-container {
+    flex-grow: 1;
+    overflow: hidden;
+    min-height: 100px;
+}

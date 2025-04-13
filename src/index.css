@@ -1,0 +1,80 @@
+/* src/index.css */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: #212121;
+  background-color: #F5F5F5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  height: 100%;
+  overflow: hidden;
+  /* Crucial */
+  font-family: Arial, Helvetica, "Segoe UI", sans-serif;
+  font-size: 10pt;
+  color: #212121;
+  background-color: #F5F5F5;
+}
+
+/* --- Ensure #root takes full height --- */
+#root {
+  height: 100%;
+  display: flex;
+  /* Make it a flex container if AppLayout is the only child */
+  flex-direction: column;
+  /* Align AppLayout vertically */
+}
+
+/* --- End #root style --- */
+
+
+.app-button {
+  background-color: #9C27B0;
+  color: #FFFFFF;
+  border: 1px solid #7B1FA2;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  font-size: 10pt;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  font-family: Arial, Helvetica, "Segoe UI", sans-serif;
+}
+
+.app-button:hover {
+  background-color: #BA68C8;
+  border-color: #9C27B0;
+}
+
+.app-button:active {
+  background-color: #7B1FA2;
+  border-color: #7B1FA2;
+}
+
+.app-button:disabled {
+  background-color: #E0E0E0;
+  color: #A0A0A0;
+  border-color: #C0C0C0;
+  cursor: not-allowed;
+}

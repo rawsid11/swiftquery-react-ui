@@ -1,0 +1,337 @@
+/* src/components/QueryCell/QueryCell.css */
+.query-cell-frame {
+    border: 1px solid #CE93D8;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.query-cell-frame.active {
+    border-color: #9C27B0;
+    box-shadow: 0 0 5px rgba(156, 39, 176, 0.3);
+}
+
+.query-cell-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+/* --- Button Styles --- */
+.filter-button {
+    background-color: #F3E5F5;
+    color: #4A148C;
+    border: 1px solid #CE93D8;
+    font-weight: normal;
+    padding: 6px 10px;
+}
+
+.filter-button:hover {
+    background-color: #E1BEE7;
+}
+
+.filter-button:active {
+    background-color: #CE93D8;
+}
+
+.filter-button:disabled {
+    background-color: #F5F5F5;
+    color: #BDBDBD;
+    border-color: #E0E0E0;
+    cursor: not-allowed;
+}
+
+.delete-button {
+    background-color: #E0E0E0;
+    color: #616161;
+    border: 1px solid #AAAAAA;
+    font-weight: normal;
+}
+
+.delete-button:hover {
+    background-color: #CACACA;
+    border-color: #999999;
+}
+
+.delete-button:active {
+    background-color: #B0B0B0;
+}
+
+.delete-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.run-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* --- End Button Styles --- */
+
+/* Results Area Styling */
+.results-area {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.row-count-label {
+    font-size: 9pt;
+    color: #757575;
+    padding: 4px 8px;
+    background-color: rgba(230, 230, 230, 0.6);
+    border-radius: 3px;
+    text-align: right;
+    align-self: flex-end;
+    white-space: nowrap;
+}
+
+.row-count-label.error {
+    color: #D32F2F;
+    background-color: rgba(211, 47, 47, 0.1);
+}
+
+/* TanStack Table Styling */
+.results-table-container {
+    border: 1px solid #CE93D8;
+    max-height: 350px;
+    overflow: auto;
+    background-color: #FFFFFF;
+    margin-bottom: 5px;
+}
+
+/* Table layout for proper column resizing */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    color: #333333;
+    font-size: 10pt;
+}
+
+.results-table th,
+.results-table td {
+    border: 1px solid #E0E0E0;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.results-table td {
+    padding: 5px 8px;
+}
+
+/* --- Results Table Header Enhancements --- */
+.results-table th {
+    background-color: #CE93D8;
+    color: #4A148C;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 0;
+    /* Remove padding from th, apply to inner content */
+    position: relative;
+}
+
+/* Wrapper inside header cell for flex layout */
+.table-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 8px;
+    height: 100%;
+}
+
+.results-table th span.table-header-clickable {
+    cursor: pointer;
+    display: inline-block;
+    padding: 2px 0px;
+    border-radius: 3px;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sort-icon {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+    color: #6A1B9A;
+    opacity: 0.6;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.results-table th:hover .sort-icon {
+    opacity: 1;
+}
+
+/* --- Column Resizing --- */
+.column-resize-handle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    cursor: col-resize;
+    z-index: 10;
+}
+
+.column-resize-handle:hover,
+.column-resize-handle:active {
+    background-color: rgba(74, 20, 140, 0.2);
+}
+
+/* Style for when resizing is active */
+body.column-resizing {
+    cursor: col-resize !important;
+    user-select: none;
+}
+
+body.column-resizing .results-table {
+    user-select: none;
+}
+
+.results-table tbody tr:nth-child(even) {
+    background-color: #F8F8F8;
+}
+
+.results-table-placeholder {
+    color: #757575;
+    font-style: italic;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #E0E0E0;
+    background-color: #FAFAFA;
+}
+
+/* Style for NULL values in table */
+.results-table td span.null-value {
+    color: #9E9E9E;
+    font-style: italic;
+}
+
+/* --- Loading Indicator Styles --- */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #CE93D8;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.loading-spinner {
+    font-size: 2.5rem;
+    color: #9C27B0;
+    animation: spin 1.2s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-text {
+    color: #9C27B0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* --- Error Message Styles --- */
+.error-container {
+    display: flex;
+    padding: 15px;
+    background-color: #FFEBEE;
+    border: 1px solid #FFCDD2;
+    border-left: 5px solid #D32F2F;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.error-icon-container {
+    display: flex;
+    align-items: flex-start;
+    padding-right: 15px;
+}
+
+.error-icon {
+    font-size: 1.5rem;
+    color: #D32F2F;
+}
+
+.error-message {
+    flex: 1;
+}
+
+.error-message h4 {
+    margin: 0 0 5px 0;
+    color: #B71C1C;
+    font-size: 1rem;
+}
+
+.error-message p {
+    margin: 0;
+    color: #333333;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* --- Success Message Styles --- */
+.success-message {
+    padding: 15px;
+    background-color: #E8F5E9;
+    border: 1px solid #C8E6C9;
+    border-left: 5px solid #4CAF50;
+    border-radius: 4px;
+    margin: 10px 0;
+    color: #2E7D32;
+    font-weight: 500;
+}
+
+/* --- Pagination Controls Styling --- */
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 5px 0;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
+
+.pagination-button {
+    font-weight: normal;
+    padding: 4px 10px;
+    min-width: 80px;
+}
+
+.page-info-label {
+    font-size: 9pt;
+    color: #757575;
+    padding: 4px 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.page-info-label+.next-button {
+    margin-left: auto;
+}

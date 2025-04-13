@@ -1,0 +1,69 @@
+/* src/components/RightPanel/RightPanel.css */
+
+.panel-header-label {
+    font-weight: bold;
+    color: #6A1B9A;
+    font-size: 11pt;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #CE93D8;
+    padding-bottom: 3px;
+    flex-shrink: 0;
+}
+
+/* Container for stats display or placeholder */
+.stats-content-display {
+    flex-grow: 1;
+    overflow-y: auto;
+    /* Allow scroll if stats content gets long */
+    line-height: 1.4;
+    font-size: 10pt;
+    padding-top: 5px;
+}
+
+.stats-content-placeholder {
+    color: #757575;
+}
+
+/* Styling for when stats are displayed */
+.stats-details {
+    color: #424242;
+    /* color_stats_text */
+}
+
+.stats-header {
+    color: #6A1B9A;
+    /* color_panel_header */
+    font-size: 10.5pt;
+    margin-bottom: 8px;
+}
+
+.stats-header strong {
+    font-weight: bold;
+    color: #333333;
+    /* Darker for the name itself */
+}
+
+.stats-group {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    color: #4A148C;
+    /* Header color for groups */
+    font-size: 9.5pt;
+    border-top: 1px dashed #CE93D8;
+    padding-top: 8px;
+}
+
+.stats-group:first-of-type {
+    margin-top: 0;
+    border-top: none;
+    padding-top: 0;
+}
+
+
+.stats-item {
+    margin-bottom: 3px;
+    padding-left: 5px;
+    /* Indent stats items slightly */
+    font-size: 9.5pt;
+}

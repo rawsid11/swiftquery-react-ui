@@ -1,0 +1,203 @@
+/* src/components/SchemaTree/SchemaTree.css */
+
+.schema-tree {
+    border: 1px solid #CE93D8;
+    /* color_border */
+    padding: 4px;
+    background-color: #FFFFFF;
+    /* color_table_tree_bg */
+    color: #333333;
+    /* color_table_tree_text */
+    font-family: Arial, Helvetica, "Segoe UI", sans-serif;
+    font-size: 10pt;
+    overflow: auto;
+    /* Allow scrolling for the whole tree */
+    height: 100%;
+    /* Fill the container */
+}
+
+.tree-node {
+    /* Basic node styling */
+}
+
+.node-content {
+    display: flex;
+    align-items: center;
+    padding: 3px 4px 3px 0;
+    /* Slightly reduced padding */
+    cursor: default;
+    border-radius: 3px;
+}
+
+.node-content:hover {
+    background-color: #ECEFF1;
+    /* Subtle hover */
+}
+
+/* Indentation based on level */
+.tree-node.level-0>.node-content {
+    padding-left: 0px;
+}
+
+.tree-node.level-1>.node-content {
+    padding-left: 15px;
+}
+
+.tree-node.level-2>.node-content {
+    padding-left: 30px;
+}
+
+.tree-node.level-3>.node-content {
+    padding-left: 45px;
+}
+
+/* Add more levels if needed */
+
+/* Toggle icon */
+.toggle-icon {
+    display: inline-flex;
+    /* Use flex for alignment */
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 1.2em;
+    /* Match icon size roughly */
+    font-size: 0.7em;
+    color: #666;
+    cursor: pointer;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+}
+
+.toggle-icon:not(.has-children) {
+    cursor: default;
+    /* No pointer if no children */
+    opacity: 0;
+    /* Hide if no children */
+}
+
+/* Icon container */
+.node-icon-container {
+    margin-left: 2px;
+    margin-right: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2em;
+    height: 1.2em;
+    flex-shrink: 0;
+}
+
+/* Style for the SVG icon itself */
+.node-icon-svg {
+    vertical-align: middle;
+}
+
+/* Label text */
+.node-label {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Child nodes container */
+.node-children {
+    /* Container for child nodes */
+}
+
+/* Type-specific styling */
+.tree-node.type-database>.node-content .node-label {
+    font-weight: bold;
+}
+
+.tree-node.type-schema>.node-content .node-label {
+    font-weight: bold;
+    color: #5D4037;
+    /* Slightly different color for schema */
+}
+
+.tree-node.type-table>.node-content .node-label {
+    /* Add specific style if needed */
+}
+
+.tree-node.type-view>.node-content .node-label {
+    font-style: italic;
+    color: #0277BD;
+    /* Blueish for views */
+}
+
+.tree-node.type-column>.node-content {
+    color: #757575;
+    /* color_secondary_text */
+    font-size: 0.9em;
+    cursor: default;
+}
+
+.tree-node.type-column>.node-content:hover {
+    background-color: transparent;
+    /* No hover effect */
+}
+
+.tree-node.type-column .node-icon-container {
+    /* Adjust column icon container if needed */
+}
+
+/* Empty node */
+.node-content.empty-node {
+    color: #9E9E9E;
+    font-style: italic;
+    font-size: 0.9em;
+    padding-left: 15px;
+    /* Indent empty message */
+}
+
+.node-content.empty-node:hover {
+    background-color: transparent;
+}
+
+/* Optional selection state */
+/*
+.node-content.selected {
+  background-color: #E1BEE7;
+  color: #4A148C;
+}
+*/
+/* src/components/SchemaTree/SchemaTree.css */
+/* ... (keep all existing styles) ... */
+
+/* --- Selection state --- */
+.node-content.selected {
+    background-color: #E1BEE7;
+    /* color_selection_bg */
+    color: #4A148C;
+    /* color_selection_text */
+    font-weight: 500;
+    /* Slightly bolder */
+}
+
+/* Ensure selected state overrides hover */
+.node-content.selected:hover {
+    background-color: #E1BEE7;
+    /* Keep selection background on hover */
+}
+
+/* Optional: Style icons/text within selected node if needed */
+.node-content.selected .node-icon-svg {
+    color: #4A148C;
+    /* Match text color */
+}
+
+.node-content.selected .node-label {
+    color: #4A148C;
+    /* Ensure label text color is correct */
+}
+
+/* Adjust selected column text color if needed */
+.tree-node.type-column>.node-content.selected {
+    color: #4A148C;
+}
+
+.tree-node.type-column>.node-content.selected .node-label {
+    color: #4A148C;
+}

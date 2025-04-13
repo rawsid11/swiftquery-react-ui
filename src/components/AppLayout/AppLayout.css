@@ -1,0 +1,82 @@
+/* src/components/AppLayout/AppLayout.css */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #F5F5F5;
+}
+
+/* MenuBar is added before header */
+
+.app-header {
+    background-color: #4A148C;
+    color: #FFFFFF;
+    padding: 8px 10px;
+    text-align: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+.app-main-content-wrapper {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+    min-height: 0;
+    border-top: 1px solid #CE93D8;
+    border-bottom: 1px solid #CE93D8;
+}
+
+.panel-content-wrapper {
+    overflow-y: auto;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.panel-content-wrapper.left,
+.panel-content-wrapper.right {
+    background-color: #E1BEE7;
+}
+
+.panel-content-wrapper.center {
+    background-color: #F5F5F5;
+    padding: 10px;
+}
+
+.resize-handle-outer {
+    flex: 0 0 6px;
+    background-color: #CE93D8;
+    cursor: col-resize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(74, 20, 140, 0.3);
+    outline: none;
+    z-index: 5;
+}
+
+.resize-handle-outer[data-resizing] {
+    background-color: #B39DDB;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+/* StatusBar is added before footer */
+
+.app-footer {
+    background-color: #4A148C;
+    color: #FFFFFF;
+    padding: 6px 10px;
+    text-align: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+    font-size: 9pt;
+}

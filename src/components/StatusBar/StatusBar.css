@@ -1,0 +1,53 @@
+/* src/components/StatusBar/StatusBar.css */
+.status-bar {
+    background-color: #4A148C;
+    color: #FFFFFF;
+    padding: 4px 10px;
+    font-size: 9pt;
+    flex-shrink: 0;
+    border-top: 1px solid #6A1B9A;
+    line-height: 1.2;
+    min-height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Add gap between sections */
+}
+
+.status-message {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    /* Allow message to take up available space */
+    min-width: 100px;
+    /* Ensure it doesn't collapse too much */
+}
+
+.status-spacer {
+    flex-grow: 2;
+    /* Push following items to the right */
+}
+
+.status-section {
+    display: inline-flex;
+    /* Align icon and text */
+    align-items: center;
+    white-space: nowrap;
+    /* Prevent wrapping */
+    flex-shrink: 0;
+    /* Prevent shrinking */
+    opacity: 0.9;
+    /* Slightly less prominent */
+    cursor: default;
+}
+
+.query-time {
+    /* Specific styles if needed */
+}
+
+.connection-status {
+    /* Specific styles if needed */
+    font-weight: 500;
+    /* Slightly bolder */
+}

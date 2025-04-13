@@ -1,0 +1,122 @@
+/* src/components/TableNameModal/TableNameModal.css */
+
+.table-name-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Darker overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.table-name-modal-content {
+    background-color: #F5F5F5;
+    color: #212121;
+    border: 1px solid #CE93D8;
+    border-radius: 6px;
+    padding: 25px 30px;
+    /* More padding */
+    width: 100%;
+    max-width: 500px;
+    /* Suitable width for this dialog */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.table-name-modal-content h2 {
+    margin: 0 0 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #CE93D8;
+    color: #6A1B9A;
+    font-size: 14pt;
+    text-align: center;
+}
+
+.modal-file-info {
+    font-size: 10pt;
+    color: #616161;
+    /* Slightly muted text */
+    margin: 0 0 10px 0;
+    word-break: break-all;
+    /* Wrap long filenames */
+}
+
+.modal-file-info strong {
+    color: #424242;
+    font-weight: 500;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Space between label and input */
+}
+
+.modal-label {
+    font-size: 10pt;
+    font-weight: 500;
+    color: #424242;
+    margin-bottom: 3px;
+}
+
+.modal-input {
+    padding: 8px 10px;
+    /* More padding */
+    border: 1px solid #CE93D8;
+    border-radius: 4px;
+    font-size: 11pt;
+    /* Slightly larger input text */
+    background-color: #FFFFFF;
+    color: #212121;
+    width: 100%;
+    /* Full width */
+}
+
+.modal-input:focus {
+    outline: none;
+    border-color: #9C27B0;
+    /* Highlight border on focus */
+    box-shadow: 0 0 0 2px rgba(156, 39, 176, 0.2);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    /* Align buttons to the right */
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #E0E0E0;
+    /* Lighter separator */
+    margin-top: 15px;
+    gap: 10px;
+    /* Space between buttons */
+}
+
+/* Reuse .app-button styles from global CSS */
+.modal-actions .app-button {
+    min-width: 90px;
+    font-weight: bold;
+    /* Make action buttons bold */
+}
+
+.modal-cancel-button {
+    background-color: #FFFFFF;
+    color: #4A148C;
+    border-color: #CE93D8;
+    font-weight: normal;
+    /* Cancel less prominent */
+}
+
+.modal-cancel-button:hover {
+    background-color: #F3E5F5;
+}
+
+.modal-import-button {
+    /* Default app-button style is likely fine */
+}
